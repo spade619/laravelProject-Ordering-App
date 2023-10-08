@@ -4,25 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\Pizza;
 class PizzaController extends Controller
 {
     //
     public function index(){
-        $pizzas = [
-            ['type' => 'hawaiian', 'base' => 'cheesy crust','price' => 10],
-            ['type' => 'mexican', 'base' => 'crispy crust','price' => 30],
-            ['type' => 'american', 'base' => 'flat crust','price' => 25],
-            ['type' => 'italian', 'base' => 'beefy crust','price' => 10],
-            ['type' => 'pinoy', 'base' => 'normal crust','price' => 50]
-           ];
+        // $pizzas = [
+        //     ['type' => 'hawaiian', 'base' => 'cheesy crust','price' => 10],
+        //     ['type' => 'mexican', 'base' => 'crispy crust','price' => 30],
+        //     ['type' => 'american', 'base' => 'flat crust','price' => 25],
+        //     ['type' => 'italian', 'base' => 'beefy crust','price' => 10],
+        //     ['type' => 'pinoy', 'base' => 'normal crust','price' => 50]
+        //    ];
         
+
+            $pizzas = Pizza::all();
                
         
             return view('pizzas', [
                 'pizzas' => $pizzas,
-                'name' => request('name'),
-                'age' => request('age')
             ]);
     }
 
