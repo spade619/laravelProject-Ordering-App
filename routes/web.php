@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//pizzas page
 Route::get('/pizzas', function () {
 
    $pizzas = [
@@ -27,6 +28,22 @@ Route::get('/pizzas', function () {
     ['type' => 'pinoy', 'base' => 'normal crust','price' => 50]
    ];
 
-               
-    return view('pizzas', ['pizzas' => $pizzas]);
+       
+
+    return view('pizzas', [
+        'pizzas' => $pizzas,
+        'name' => request('name'),
+        'age' => request('age')
+    ]);
 });
+
+// pizza details route params
+
+Route::get('/pizzas/{id}', function ($id) {
+
+   
+        
+ 
+     return view('details', ['id' => $id]);
+ });
+ 

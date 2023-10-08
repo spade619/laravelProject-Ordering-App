@@ -9,7 +9,8 @@
                 </div>
           
               
-
+                <p>{{$name}}</p>
+                <h2>{{$age}}</h2>
                 @foreach($pizzas as $pizza)
                 <p>menu {{$loop ->index}}</p>
                     <p class="text-danger">the type of this pizza is {{ $pizza ['type']}}</p>
