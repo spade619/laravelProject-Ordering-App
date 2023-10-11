@@ -21,6 +21,11 @@ Route::get('/', function () {
 //pizzas page
 Route::get('/pizzas', [PizzaController::class, 'index']);
 
+
+// pizzas create route
+
+Route::get('/pizzas/create', [PizzaController::class, 'create']);
+
 // pizza details route params
 
 Route::get('/pizzas/{id}', [PizzaController::class, 'show']);

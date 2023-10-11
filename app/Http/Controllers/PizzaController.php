@@ -21,7 +21,7 @@ class PizzaController extends Controller
             $pizzas = Pizza::all();
                
         
-            return view('pizzas', [
+            return view('pizzas.index', [
                 'pizzas' => $pizzas,
             ]);
     }
@@ -29,6 +29,11 @@ class PizzaController extends Controller
 
     //2nd route handled by controller
     public function show($id){
-        return view('details', ['id' => $id]);
+        return view('pizzas.show', ['id' => $id]);
+    }
+
+
+    public function create(){
+        return view('pizzas.create');
     }
 }
