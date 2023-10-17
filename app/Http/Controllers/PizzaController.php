@@ -29,7 +29,9 @@ class PizzaController extends Controller
 
     //2nd route handled by controller
     public function show($id){
-        return view('pizzas.show', ['id' => $id]);
+
+       $pizza = Pizza::findOrFail($id);
+        return view('pizzas.show', ['pizza' => $pizza]);
     }
 
 
